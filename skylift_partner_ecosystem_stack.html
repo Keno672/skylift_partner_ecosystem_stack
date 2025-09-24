@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skylift – Partner Ecosystem Stack (HTML)</title>
+<style>
+  :root{
+    --bg:#0b0f1a;
+    --card:#111827;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --border:#1f2937;
+    --air:#3b82f6;
+    --ground:#6b7280;
+    --network:#ef4444;
+    --data:#10b981;
+    --compliance:#f59e0b;
+    --market:#8b5cf6;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    background: radial-gradient(1200px 800px at 20% 10%, #111631 0%, #0b0f1a 55%, #090d16 100%);
+    color:var(--text);
+    line-height:1.5;
+  }
+  .wrap{
+    max-width:1100px;
+    margin:40px auto;
+    padding:24px;
+  }
+  header{
+    text-align:center;
+    margin-bottom:24px;
+  }
+  h1{
+    font-size:clamp(22px,4vw,34px);
+    margin:0 0 4px 0;
+    letter-spacing:0.2px;
+  }
+  .subtitle{
+    color:var(--muted);
+    font-size:clamp(14px,2vw,16px);
+  }
+
+  /* Layer cards */
+  .stack{
+    display:flex;
+    flex-direction:column-reverse; /* Air at base visually, Market at top */
+    gap:14px;
+    margin-top:28px;
+  }
+  .layer{
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+    position:relative;
+    overflow:hidden;
+  }
+  .layer .bar{
+    height:8px;
+    width:100%;
+  }
+  .layer .content{
+    padding:18px 18px 16px 18px;
+  }
+  .layer h2{
+    margin:6px 0 6px 0;
+    font-size:clamp(16px,2.6vw,20px);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:12px;
+    color:#0b0f1a;
+    background:rgba(255,255,255,0.92);
+    border-radius:999px;
+    padding:2px 10px;
+    margin-left:6px;
+  }
+  ul.partners{
+    list-style:none;
+    padding:0;
+    margin:8px 0 0 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 14px;
+  }
+  ul.partners li{
+    padding:8px 10px;
+    border:1px dashed var(--border);
+    border-radius:10px;
+    color:var(--text);
+    background:rgba(255,255,255,0.02);
+  }
+  .note{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+  }
+  /* Colour bars */
+  .air .bar{ background: var(--air); }
+  .ground .bar{ background: var(--ground); }
+  .network .bar{ background: var(--network); }
+  .data .bar{ background: var(--data); }
+  .compliance .bar{ background: var(--compliance); }
+  .market .bar{ background: var(--market); }
+
+  /* Footer */
+  footer{
+    margin-top:26px;
+    color:var(--muted);
+    font-size:12px;
+    text-align:center;
+  }
+
+  /* Print-friendly */
+  @media print{
+    body{ background:#fff; color:#111; }
+    .wrap{ margin:0; }
+    .layer{ box-shadow:none; border-color:#ddd; }
+    .pill{ color:#111; background:#eaeaea; }
+    .note{ color:#444; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Skylift &mdash; Partner Ecosystem Stack</h1>
+      <div class="subtitle">Layered view of partners powering corridors: Air → Ground → Network → Data → Compliance → Market</div>
+    </header>
+
+    <section class="stack">
+
+      <!-- Market -->
+      <article class="layer market">
+        <div class="bar"></div>
+        <div class="content">
+          <h2>Market Layer <span class="pill">Funding · PR · Community</span></h2>
+          <ul class="partners">
+            <li>Enterprise Ireland</li>
+            <li>Cointelegraph Accelerator</li>
+            <li>Outlier Ventures</li>
+            <li>TokenMinds</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Compliance -->
+      <article class="layer compliance">
+        <div class="bar"></div>
+        <div class="content">
+          <h2>Compliance &amp; Regulatory Layer <span class="pill">Safety · Supervision · Legal</span></h2>
+          <ul class="partners">
+            <li>IAA (Irish Aviation Authority)</li>
+            <li>Unifly (U-space Management)</li>
+            <li>MiCA (EU Token Regulation)</li>
+          </ul>
+          <div class="note">Covers corridor approvals (SORA/U-space), BVLOS certification, and token compliance (MiCA).</div>
+        </div>
+      </article>
+
+      <!-- Data -->
+      <article class="layer data">
+        <div class="bar"></div>
+        <div class="content">
+          <h2>Data &amp; Automation Layer <span class="pill">Contracts · Settlement · ESG</span></h2>
+          <ul class="partners">
+            <li>Staex (NEXA)</li>
+            <li>Hedera / Neuron</li>
+          </ul>
+          <div class="note">Smart contracts for slot booking and payments; on-chain settlement, telemetry, and ESG dashboards.</div>
+        </div>
+      </article>
+
+      <!-- Network -->
+      <article class="layer network">
+        <div class="bar"></div>
+        <div class="content">
+          <h2>Network &amp; Security Layer <span class="pill">Telemetry · Zero-Trust</span></h2>
+          <ul class="partners">
+            <li>Vodafone (5G/IoT)</li>
+            <li>Cato Networks (SASE · Zero-Trust)</li>
+          </ul>
+          <div class="note">Encrypted routing of drone telemetry and contractor data across 5G, Starlink, and Staex mesh.</div>
+        </div>
+      </article>
+
+      <!-- Ground -->
+      <article class="layer ground">
+        <div class="bar"></div>
+        <div class="content">
+          <h2>Ground Layer <span class="pill">Depots · Vertiports</span></h2>
+          <ul class="partners">
+            <li>EVA (Vertiports)</li>
+            <li>Murdocks (Depot Partner)</li>
+          </ul>
+          <div class="note">EVA supplies modular vertiports for take-off, landing, charging, and secure overnight storage &mdash; enabling multi-hub BVLOS corridors.</div>
+        </div>
+      </article>
+
+      <!-- Air -->
+      <article class="layer air">
+        <div class="bar"></div>
+        <div class="content">
+          <h2>Air Layer <span class="pill">Fleet · Flight Ops</span></h2>
+          <ul class="partners">
+            <li>DJI (FlyCart 30 Fleet)</li>
+            <li>Wills Bros (Site Partner)</li>
+          </ul>
+          <div class="note">Standardised heavy-lift fleet + anchor construction site partner for corridor trials.</div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      © Skylift &mdash; Partner Ecosystem Stack. Designed for investor decks &amp; whitepapers.
+    </footer>
+  </div>
+</body>
+</html>
